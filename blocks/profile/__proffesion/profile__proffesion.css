@@ -1,0 +1,11 @@
+.profile__proffesion {
+    max-width: 100%;
+    max-height: 18px;
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: calc(14px + 4 * (100vw / 1280));
+line-height: 22px;
+color: #FFFFFF;
+margin: 0;
+}
