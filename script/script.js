@@ -21,6 +21,8 @@ closeButton.addEventListener("click", closeRedact);
 let formElement = popup.querySelector(".popup__form");
 let saveButton = popup.querySelector(".popup__button-save");
 
+
+
 function formSubmitHandler(evt) {
   evt.preventDefault();
   let nameInput = formElement.querySelector(".popup__form-name");
@@ -31,9 +33,8 @@ function formSubmitHandler(evt) {
   let profileProffesion = profileInfo.querySelector(".profile__proffesion");
   profileName.textContent = nameInput.value;
   profileProffesion.textContent = jobInput.value;
-  
+  closeRedact();
 }
 
 formElement.addEventListener("submit", formSubmitHandler);
-
 saveButton.addEventListener('click', formSubmitHandler);
