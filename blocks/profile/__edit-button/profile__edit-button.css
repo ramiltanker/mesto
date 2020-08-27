@@ -7,8 +7,18 @@ background-color: #000000;
 box-sizing: border-box;
 grid-column: 2/2;
 align-self: flex-end;
+padding: 0;
 }
 
 .profile__edit-button:hover {
     opacity: 0.6;
+}
+
+
+@media all and (max-width: 425px) {
+    .profile__edit-button {
+        width: 18px;
+        height: 18px;
+        padding: 0;
+    }
 }

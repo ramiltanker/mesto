@@ -4,3 +4,9 @@ max-height: 127px;
 border-radius: 50%;
 margin-right: 30px;
 }
+
+@media all and (max-width: 590px) {
+    .profile__image {
+        margin: auto;
+    }
+}

@@ -8,4 +8,13 @@ font-size: calc(27px + 15 * (100vw / 1280));
 line-height: 56px;
 color: #FFFFFF;
 margin: 0;
+text-align: center;
+}
+
+@media all and (max-width: 425px) {
+    .profile__name {
+        max-width: 300px;
+        max-height: 38px;
+        font-size: calc(27px + (15 + 15 * 0.7) * ((100vw - 320px) / 1280));
+    }
 }

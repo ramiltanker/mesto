@@ -11,3 +11,10 @@
     border-style: solid;
     margin-bottom: 36px;
 }
+
+@media all and (max-width:590px) {
+    .header {
+        max-width: 324px;
+        margin-bottom: 38px;
+    }
+}
