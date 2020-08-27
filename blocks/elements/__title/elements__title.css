@@ -8,5 +8,7 @@ color: #000000;
 margin: 0;
 margin-bottom: 31px;
 margin-left: 21px;
-
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
 }
