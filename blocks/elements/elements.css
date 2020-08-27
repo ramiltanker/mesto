@@ -5,6 +5,7 @@
     grid-template-rows: repeat(2, 361px);
     margin: auto;
     margin-top: 47px;
+    margin-bottom: 66px;
     row-gap: 21px;
     column-gap: 18px;
     justify-content: center;
