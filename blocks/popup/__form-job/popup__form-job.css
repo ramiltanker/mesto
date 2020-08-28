@@ -6,3 +6,15 @@
     padding: 0;
     margin-left: 36px;
 }
+
+@media all and (max-width: 590px) {
+    .popup__form-job {
+        max-width: 285px;
+    }
+}
+
+@media all and (max-width: 425px) {
+ .popup__form-job {
+     max-width: 180px;
+ }   
+}

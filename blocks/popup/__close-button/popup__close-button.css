@@ -8,3 +8,15 @@
     left: 420px;
     top: -45px;
 }
+
+@media all and (max-width: 590px) {
+    .popup__close-button {
+        left: 340px;
+    }
+}
+
+@media all and (max-width: 425px) {
+    .popup__close-button {
+        left: 240px;
+    }
+}

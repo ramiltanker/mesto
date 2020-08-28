@@ -1,14 +1,14 @@
 .elements__title {
-font-family: Inter;
-font-style: normal;
-font-weight: 900;
-font-size: calc(24px + 0 * (100vw / 1280));
-line-height: 29px;
-color: #000000;
-margin: 0;
-margin-bottom: 31px;
-margin-left: 21px;
-text-overflow: ellipsis;
-white-space: nowrap;
-overflow: hidden;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: calc(24px + 0 * (100vw / 1280));
+  line-height: 29px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 31px;
+  margin-left: 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

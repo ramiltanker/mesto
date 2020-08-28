@@ -1,5 +1,5 @@
 .popup__form-name {
-    width: 358px;
+    max-width: 358px;
     max-height: 14px;
     border-width: 0 0 1px 0;
     border-color: rgba(0, 0, 0, 0.2);
@@ -9,3 +9,14 @@
 }
 
 
+@media all and (max-width: 590px) {
+ .popup__form-name {
+     max-width: 285px;
+ }   
+}
+
+@media all and (max-width: 425px) {
+    .popup__form-name {
+        max-width: 180px;
+    }
+}

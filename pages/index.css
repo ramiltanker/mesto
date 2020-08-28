@@ -1,4 +1,5 @@
 @import url(../vendor/normalize.css);
+@import url(../fonts/inter.css);
 /* Page */
 @import url(../blocks/page/page.css);
 /* Page */
@@ -14,7 +15,7 @@
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__proffesion/profile__proffesion.css);
-@import url(../blocks/profile/__add-button/profile__add-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css); 
 /* Profile */
 /* Elements */
 @import url(../blocks/elements/elements.css);
@@ -36,4 +37,5 @@
 @import url(../blocks/popup/__button-save/popup__button-save.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
+@import url(../blocks/popup/__close-image/popup__close-image.css)
 /* Popup */
