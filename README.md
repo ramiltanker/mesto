@@ -4,6 +4,6 @@
 -----------------------------------
 Проект в котором присутсвует код на javascript, который позволяет редактировать и сохранять изменения в профиле. Сайт свёрстан с помощью технологий grid и flex-box. На кнопках присутствуют визуальные эффекты, такие как затемнение при наведении мыши(hover). Сайт адаптивен.
 ---
-Ссылка на GitHub Pages
+Ссылка на GitHub Pages:
 ###
-[GitHub Pages](file:///C:/Users/Admin/Desktop/java/index.html)
+[GitHub Pages](https://ramiltanker.github.io/mesto/)
