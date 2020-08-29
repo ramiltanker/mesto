@@ -1,5 +1,5 @@
 .popup__title {
-  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: calc(20px + 4 * (100vw / 1280));

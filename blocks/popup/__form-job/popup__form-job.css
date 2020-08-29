@@ -4,8 +4,7 @@
     border-width: 0 0 1px 0;
     border-color: rgba(0, 0, 0, 0.2);
     padding: 0;
-    margin-left: 36px;
-}
+    margin-left: 36px;}
 
 @media all and (max-width: 590px) {
     .popup__form-job {
