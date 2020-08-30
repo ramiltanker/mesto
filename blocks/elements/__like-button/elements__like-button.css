@@ -6,4 +6,9 @@
     margin-bottom: 31px;
     margin-right: 21px;
     background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.elements__like-button:hover {
+    opacity: 0.6;
 }

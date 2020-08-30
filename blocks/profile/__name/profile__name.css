@@ -4,7 +4,7 @@
   max-height: 43px;
   font-style: normal;
   font-weight: 500;
-  font-size: calc(27px + 15 * (100vw / 1280));
+  font-size: 42px;
   line-height: 56px;
   color: #ffffff;
   margin: 0;
@@ -15,6 +15,6 @@
   .profile__name {
     max-width: 300px;
     max-height: 38px;
-    font-size: calc(27px + (15 + 15 * 0.7) * ((100vw - 320px) / 1280));
+    font-size: 27px;
   }
 }

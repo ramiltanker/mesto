@@ -4,7 +4,7 @@
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(14px + 4 * (100vw / 1280));
+  font-size: 18px;
   line-height: 22px;
   color: #ffffff;
   margin: 0;
@@ -14,7 +14,7 @@
 @media all and (max-width: 590px) {
   .profile__proffesion {
     justify-self: center;
-    font-size: calc(14px + (4 + 4 * 0.7) * ((100vw - 320px) / 1280));
+    font-size: 14px;
     grid-column: 1/3;
   }
 }

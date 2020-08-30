@@ -8,6 +8,7 @@ box-sizing: border-box;
 grid-column: 2/2;
 align-self: flex-end;
 padding: 0;
+cursor: pointer;
 }
 
 .profile__edit-button:hover {
