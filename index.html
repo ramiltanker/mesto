@@ -7,7 +7,6 @@
     <title>2020 Mesto Russia</title>
   </head>
   <body class="page">
-    <div class="page">
       <header class="header">
         <img class="header__logo" src="./images/header_logo.svg" alt="Лого" />
       </header>
@@ -19,11 +18,11 @@
           alt="Аватарка"
         />
         <div class="profile__info">
-          <h2 class="profile__name">Жак-Ив Кусто</h2>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button">
             <img alt="Редактировать" src="./images/edit_button.svg" />
           </button>
-          <p class="profile__proffesion">Исследователь океана</p>
+          <p class="profile__profesion">Исследователь океана</p>
         </div>
         <button class="profile__add-button">
           <img alt="Добавить" src="./images/add-button.svg" />
@@ -31,37 +30,37 @@
       </section>
 
       <section class="elements">
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/Карачаевск.png)">
           <h2 class="elements__title">Карачаевск</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
           </button>
         </div>
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/эльбрус.png)">
           <h2 class="elements__title">Гора Эльбрус</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
           </button>
         </div>
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/домбай.png)">
           <h2 class="elements__title">Домбай</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
           </button>
         </div>
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/эльбрус.png)">
           <h2 class="elements__title">Гора Эльбрус</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
           </button>
         </div>
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/домбай.png)">
           <h2 class="elements__title">Домбай</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
           </button>
         </div>
-        <div class="elements__element">
+        <div class="elements__element" style="background-image: url(./images/Карачаевск.png)">
           <h2 class="elements__title">Карачаево-Черкесия</h2>
           <button class="elements__like-button">
             <img src="./images/like.svg" alt="Нравится" />
@@ -73,28 +72,27 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-      <section class="popup">
+      <div class="popup">
         <div class="popup__container">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <div class="popup__form">
-            <input type="text" class="popup__form-name" value="Жак-Ив Кусто" />
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <form method="post" name="popup" class="popup__form">
+            <input type="text" class="popup__form-name" name="popup__name"/>
             <input
               type="text"
               class="popup__form-job"
-              value="Исследователь океана"
+              name="popup__job"
             />
-          </div>
-          <button class="popup__button-save">Сохранить</button>
-          <button class="popup__close-button">
+          </form>
+          <button class="popup__button-save" type="submit">Сохранить</button>
+          <button class="popup__close-button" type="reset">
             <img
-              src="./images/Close Icon.svg"
+              src="./images/Close_Icon.svg"
               class="popup__close-image"
               alt="Закрыть"
             />
           </button>
         </div>
-      </section>
-    </div>
+      </div>
     <script src="./script/script.js"></script>
   </body>
 </html>
