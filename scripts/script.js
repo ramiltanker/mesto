@@ -3,7 +3,6 @@ let profile = page.querySelector('.profile');
 let profileInfo = profile.querySelector('.profile__info');
 let editButton = profileInfo.querySelector('.profile__edit-button');
 let popup = page.querySelector('.popup');
-let popupOpened = popup.querySelector('.popup_opened');
 let closeButton = popup.querySelector('.popup__close-button');
 let formElement = popup.querySelector('.popup__form');
 let saveButton = popup.querySelector('.popup__button-save');
@@ -41,4 +40,4 @@ function formSubmitHandler(evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
-saveButton.addEventListener('click', formSubmitHandler);
+

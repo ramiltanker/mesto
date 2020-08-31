@@ -8,6 +8,6 @@
   .footer {
     max-width: 282px;
     margin-bottom: 36px;
-    min-height: 14px;
+    max-height: 14px;
   }
 }
