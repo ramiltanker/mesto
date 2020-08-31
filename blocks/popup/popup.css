@@ -1,11 +1,11 @@
 .popup {
-    position:fixed;
-    align-items:center;
-    justify-content:center;
-    top:0px;
-    left:0px;
-    width:100vw;
-    height:90vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }

@@ -10,14 +10,14 @@ let saveButton = popup.querySelector('.popup__button-save');
 let nameInput = formElement.querySelector('.popup__form-name');
 let jobInput = formElement.querySelector('.popup__form-job');
 let profileName = profileInfo.querySelector('.profile__name');
-let profileProfesion = profileInfo.querySelector('.profile__profesion');
+let profileProfession = profileInfo.querySelector('.profile__profession');
 
 
 
 function openRedact() {
+  nameInput.value = profileName.textContent; 
+  jobInput.value = profileProfession.textContent;
   popup.classList.add('popup_opened');
-  nameInput.textContent = profileName.value; 
-  jobInput.textContent = profileProfesion.value
 }
 
 editButton.addEventListener('click', openRedact);
@@ -36,7 +36,7 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
 
   profileName.textContent = nameInput.value;
-  profileProfesion.textContent = jobInput.value;
+  profileProfession.textContent = jobInput.value;
   closeRedact();
 }
 

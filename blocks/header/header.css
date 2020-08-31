@@ -7,7 +7,7 @@
     margin: auto;
     padding-top: 45px;
     border-width: 0px 0px 1px 0px;
-    border-color: rgba(84, 84, 84, 0.7);;
+    border-color: rgba(84, 84, 84, 0.7);
     border-style: solid;
     margin-bottom: 36px;
 }
@@ -17,5 +17,6 @@
         padding-top: 28px;
         max-width: 324px;
         margin-bottom: 38px;
+        min-height: 56px;
     }
 }
