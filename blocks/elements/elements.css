@@ -9,6 +9,7 @@
     row-gap: 21px;
     column-gap: 18px;
     justify-content: center;
+    
 }
 
 @media all and (max-width: 900px) {

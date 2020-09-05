@@ -8,6 +8,9 @@
   color: #ffffff;
   margin: 0;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media all and (min-width: 1280px) {
