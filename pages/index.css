@@ -43,3 +43,4 @@
 @import url(../blocks/popup/__button-create/popup__button-create.css);
 @import url(../blocks/elements/__delete-button/elements__delete-button.css);
 /* Popup */
+@import url(../blocks/elements/__like-button/_active/elements__like-button_active.css);

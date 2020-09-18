@@ -22,6 +22,10 @@ let cardLink = document.querySelector('.elements-element');
 let cardElement = popupCards.querySelector('#popup-form-card');
 let cardsContainer = document.querySelector('.elements');
 
+
+
+
+
 function openRedact() {
   nameInput.value = profileName.textContent; 
   jobInput.value = profileProfession.textContent;
@@ -97,12 +101,13 @@ const initialCards = [
 
 function cardAdd() {
   const cardsTemplate = document.querySelector('#cards').content;
-  
-
   initialCards.forEach(function (item) {
   const cardElement = cardsTemplate.cloneNode(true);  
   cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${item.link})`);
   cardElement.querySelector('.elements__title').textContent = item.name;
+  cardElement.querySelector('.elements__like-button').addEventListener('click', function (event) {
+  event.target.classList.toggle('elements__like-button_active');
+});
   cardsContainer.append(cardElement);
   });
 
@@ -117,8 +122,15 @@ function cardAddHandler(evt) {
   const cardElement = cardsTemplate.cloneNode(true);
  cardElement.querySelector('.elements__title').textContent  = cardNameInput.value;
  cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${cardLinkInput.value})`);
- cardsContainer.prepend(cardElement);
- closeCardsRedact();
+const likeButton = cardElement.querySelector('.elements__like-button');
+ likeButton.addEventListener('click', function (event) {
+  event.target.classList.toggle('elements__like-button_active');
+  console.log(likeButton);
+ 
+
+});
+cardsContainer.prepend(cardElement);
+closeCardsRedact();
 }
 
 cardElement.addEventListener('submit', cardAddHandler);

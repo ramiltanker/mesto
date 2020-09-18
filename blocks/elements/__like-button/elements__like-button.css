@@ -1,13 +1,17 @@
 .elements__like-button {
-    max-width: 20px;
-    max-height: 18px;
+    min-width: 20px;
+    min-height: 18px;
     padding: 0;
     border: 0;
     margin-right: 21px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     cursor: pointer;
     grid-row: 5/5;
     justify-self: end;
+    background-image: url(../../../images/like.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .elements__like-button:hover {
