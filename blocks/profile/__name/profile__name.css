@@ -1,6 +1,6 @@
 .profile__name {
   font-family: "Inter", Arial, sans-serif;
-  min-height: 43px;
+  min-height: 52px;
   font-style: normal;
   font-weight: 500;
   font-size: calc(27px + 15 * (100vw / 1280));

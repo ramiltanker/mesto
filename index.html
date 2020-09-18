@@ -29,44 +29,9 @@
         </button>
       </section>
 
-      <section class="elements">
-        <div class="elements__element" style="background-image: url(./images/Карачаевск.png);">
-          <h2 class="elements__title">Карачаевск</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-        <div class="elements__element" style="background-image: url(./images/эльбрус.png);">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-        <div class="elements__element" style="background-image: url(./images/домбай.png);">
-          <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-        <div class="elements__element" style="background-image: url(./images/эльбрус.png);">
-          <h2 class="elements__title">Гора Эльбрус</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-        <div class="elements__element" style="background-image: url(./images/домбай.png);">
-          <h2 class="elements__title">Домбай</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-        <div class="elements__element" style="background-image: url(./images/Карачаевск.png);">
-          <h2 class="elements__title">Карачаево-Черкесия</h2>
-          <button class="elements__like-button" type="button">
-            <img src="./images/like.svg" alt="Нравится" />
-          </button>
-        </div>
-      </section>
+        <section class="elements">
+
+        </section>
 
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -93,6 +58,43 @@
           </button>
         </div>
       </div>
+
+      <div class="popup" id="popup-cards">
+        <div class="popup__container">
+          <h3 class="popup__title">Новое место</h3>
+          <form method="post" name="popup" class="popup__form" id="popup-form-card">
+            <input type="text" class="popup__form-title" name="popup__title"/>
+            <input
+              type="text"
+              class="popup__form-link"
+              name="popup__link"
+            />
+            <button class="popup__button-create" type="submit">Создать</button>
+          </form>
+          <button class="popup__close-button" type="reset">
+            <img
+              src="./images/Close_Icon.svg"
+              class="popup__close-image" id="cards-close"
+              alt="Закрыть"
+            />
+          </button>
+        </div>
+      </div>
+
+
+      <template id='cards'>
+        <div class="elements__element">
+          <h2 class="elements__title"></h2>
+          <button class="elements__delete-button">
+            <img src="./images/deleteButton.svg" alt="Удалить">
+          </button>
+        <button class="elements__like-button" type="button">
+          <img src="./images/like.svg" alt="Нравится" />
+        </button>
+        </div>
+      </template>
+
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>
