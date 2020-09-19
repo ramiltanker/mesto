@@ -12,8 +12,9 @@
         color: #ffffff;
         margin-bottom: 36px;
         margin-left: 36px;
-        margin-top: 48px;
         cursor: pointer;
+        border: 0;
+        padding: 0;
       }
       
       .popup__button-create:hover {

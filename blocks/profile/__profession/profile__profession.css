@@ -17,10 +17,10 @@
 
 
 
-@media all and (max-width: 590px) {
+@media all and (max-width: 591px) {
   .profile__profession {
     justify-self: center;
     font-size: 14px;
- 
+    min-height: 16px;
   }
 }

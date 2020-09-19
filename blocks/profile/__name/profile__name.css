@@ -19,9 +19,11 @@
   }
 }
 
+
+
 @media all and (max-width: 425px) {
   .profile__name {
-    min-height: 38px;
+    min-height: 43px;
     font-size: 27px;
   }
 }

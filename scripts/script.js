@@ -103,11 +103,15 @@ function cardAdd() {
   const cardsTemplate = document.querySelector('#cards').content;
   initialCards.forEach(function (item) {
   const cardElement = cardsTemplate.cloneNode(true);  
-  cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${item.link})`);
-  cardElement.querySelector('.elements__title').textContent = item.name;
-  cardElement.querySelector('.elements__like-button').addEventListener('click', function (event) {
+  const cardLink = cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${item.link})`);
+  const cardName = cardElement.querySelector('.elements__title').textContent = item.name;
+  const likeButton = cardElement.querySelector('.elements__like-button').addEventListener('click', function (event) {
   event.target.classList.toggle('elements__like-button_active');
 });
+  const deleteButton = cardElement.querySelector('.elements__delete-button').addEventListener('click', function () {
+    const cardElement = document.querySelector('.elements__element');
+    cardElement.remove();
+  });
   cardsContainer.append(cardElement);
   });
 
@@ -125,9 +129,10 @@ function cardAddHandler(evt) {
 const likeButton = cardElement.querySelector('.elements__like-button');
  likeButton.addEventListener('click', function (event) {
   event.target.classList.toggle('elements__like-button_active');
-  console.log(likeButton);
- 
-
+});
+const deleteButton = cardElement.querySelector('.elements__delete-button').addEventListener('click', function () {
+  const cardElement = document.querySelector('.elements__element');
+  cardElement.remove();
 });
 cardsContainer.prepend(cardElement);
 closeCardsRedact();

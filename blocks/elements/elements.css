@@ -3,7 +3,7 @@
     min-height: 500px;
     display: grid;
     grid-template-columns: repeat(3, 282px);
-    grid-auto-rows: minmax(361px, auto);
+    grid-auto-rows: minmax(361px, 361px);
     margin: auto;
     margin-top: 47px;
     margin-bottom: 66px;

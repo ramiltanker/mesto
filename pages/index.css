@@ -44,3 +44,10 @@
 @import url(../blocks/elements/__delete-button/elements__delete-button.css);
 /* Popup */
 @import url(../blocks/elements/__like-button/_active/elements__like-button_active.css);
+/* Popup-image */
+@import url(../blocks/popup-image/popup-image.css);
+@import url(../blocks/popup-image/__title/popup-image__title.css);
+@import url(../blocks/popup-image/__illustration/popup-image__illustration.css);
+@import url(../blocks/popup-image/__container/popup-image__container.css);
+@import url(../blocks/popup-image/__close-button/popup-image__close-button.css);
+/* Popup-image */

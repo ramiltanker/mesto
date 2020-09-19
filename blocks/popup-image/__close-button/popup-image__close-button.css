@@ -1,0 +1,12 @@
+.popup-image__close-button {
+    position: absolute; 
+    left: 395px;
+    top: -50px;
+    max-width: 40px;
+    max-height: 40px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
