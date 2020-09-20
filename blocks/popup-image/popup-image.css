@@ -12,7 +12,7 @@
     flex-direction: column;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    transition-property: visibility, opacity, display;
+    transition-property: visibility, opacity;
     transition-duration: 0.2s;
     transition-timing-function: linear;
     transition-delay: 0.2s;
