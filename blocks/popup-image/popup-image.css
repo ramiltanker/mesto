@@ -7,15 +7,17 @@
     bottom: 0;
     right: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     display: flex;
     visibility: hidden;
     flex-direction: column;
     margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    transition-property: visibility, opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: linear;
-    transition-delay: 0.2s;
-    z-index: 10;
+    display: flex;
+  visibility: hidden;
+  opacity: 0.5;
+  transition-property: visibility, opacity, display;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0.2s;
 }
