@@ -1,5 +1,5 @@
-.popup-image__close-button {   
-    left: 420px;
+.popup-image__close-button {
+    right:  -30px;
     top: -45px;
     max-width: 40px;
     max-height: 40px;

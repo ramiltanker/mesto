@@ -19,9 +19,13 @@ let cardsClose = popupCards.querySelector('#cards-close');
 let createButton = popupCards.querySelector('.popup__create-button');
 let cardName = document.querySelector('.elements-title');
 let cardLink = document.querySelector('.elements-element');
+
 let cardElement = popupCards.querySelector('#popup-form-card');
 let cardsContainer = document.querySelector('.elements');
-
+let popupImage = document.querySelector('#popup-image');
+let closePopupImageButton = popupImage.querySelector('.popup-image__close-button');
+let popupImageTitle = popupImage.querySelector('.popup-image__title');
+let popupImageIllustration = popupImage.querySelector('.popup-image__illustration');
 
 
 
@@ -69,8 +73,11 @@ function closeCardsRedact() {
 
 cardsClose.addEventListener('click', closeCardsRedact);
 
+function closePopupImage() {
+  popupImage.classList.remove('popup-image_opened');
+}
 
-
+closePopupImageButton.addEventListener('click', closePopupImage);
 
 const initialCards = [
   {
@@ -103,7 +110,13 @@ function cardAdd() {
   const cardsTemplate = document.querySelector('#cards').content;
   initialCards.forEach(function (item) {
   const cardElement = cardsTemplate.cloneNode(true);  
-  const cardLink = cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${item.link})`);
+cardElement.querySelector('.elements__image').src = item.link;
+cardElement.querySelector('.elements__image').alt = item.name;
+cardElement.querySelector('.elements__image').addEventListener('click', function () {
+  popupImage.classList.add('popup-image_opened');
+  popupImageIllustration.src = item.link;
+  popupImageTitle.textContent = item.name;
+});
   const cardName = cardElement.querySelector('.elements__title').textContent = item.name;
   const likeButton = cardElement.querySelector('.elements__like-button').addEventListener('click', function (event) {
   event.target.classList.toggle('elements__like-button_active');
@@ -112,6 +125,7 @@ function cardAdd() {
     const cardElement = document.querySelector('.elements__element');
     cardElement.remove();
   });
+  
   cardsContainer.append(cardElement);
   });
 
@@ -120,12 +134,21 @@ function cardAdd() {
 cardAdd();
 
 
+
+
+
 function cardAddHandler(evt) {
   evt.preventDefault();
   const cardsTemplate = document.querySelector('#cards').content;
   const cardElement = cardsTemplate.cloneNode(true);
  cardElement.querySelector('.elements__title').textContent  = cardNameInput.value;
- cardElement.querySelector('.elements__element').setAttribute(`style`, `background-image: url(${cardLinkInput.value})`);
+ cardElement.querySelector('.elements__image').src = cardLinkInput.value;
+ cardElement.querySelector('.elements__image').alt = cardNameInput.value;
+ cardElement.querySelector('.elements__image').addEventListener('click', function () {
+  popupImage.classList.add('popup-image_opened');
+  popupImageIllustration.src = cardLinkInput.value;
+  popupImageTitle.textContent = cardNameInput.value;
+});
 const likeButton = cardElement.querySelector('.elements__like-button');
  likeButton.addEventListener('click', function (event) {
   event.target.classList.toggle('elements__like-button_active');
