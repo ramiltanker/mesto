@@ -41,7 +41,6 @@ editButton.addEventListener('click', openProfilePopup);
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  popup.classList.remove('popup_image-opened');
 }
 
 closeButton.addEventListener('click', function () {
@@ -58,7 +57,6 @@ closePopupImageButton.addEventListener('click', function () {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  popup.classList.add('popup_image-opened');
 }
 
 cardAddButton.addEventListener('click', function () {
