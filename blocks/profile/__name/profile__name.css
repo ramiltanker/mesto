@@ -19,8 +19,6 @@
   }
 }
 
-
-
 @media all and (max-width: 425px) {
   .profile__name {
     min-height: 43px;
