@@ -28,6 +28,8 @@ const popupImageIllustration = popupImage.querySelector(
   ".popup__illustration-image"
 );
 
+const allPopups = Array.from(document.querySelectorAll(".popup"));
+
 function openProfilePopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileProfession.textContent;
@@ -38,6 +40,9 @@ editButton.addEventListener("click", openProfilePopup);
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", function (evt) {
+    keyHandler(evt, popup);
+  });
 }
 
 function keyHandler(evt, popup) {
@@ -46,32 +51,15 @@ function keyHandler(evt, popup) {
   }
 }
 
-function mouseHandler(evt, popup) {
-  const popupOpened = document.querySelector(".popup_opened");
-  if (evt.target === popupOpened) {
-    closePopup(popup);
-  }
-}
-
-document.addEventListener("click", function (evt) {
-  mouseHandler(evt, popupProfile);
-  mouseHandler(evt, popupCards);
-  mouseHandler(evt, popupImage);
+allPopups.forEach(function (popup) {
+  popup.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+  });
 });
 
-document.addEventListener("keydown", function (evt) {
-  keyHandler(evt, popupCards);
-  keyHandler(evt, popupProfile);
-  keyHandler(evt, popupImage);
-});
-
-document.removeEventListener("keydown", function (evt) {
-  keyHandler(evt, popupCards);
-  keyHandler(evt, popupProfile);
-  keyHandler(evt, popupImage);
-});
-
-closeButton.addEventListener("click", function () {
+closeButton.addEventListener("click", function (evt) {
   closePopup(popupProfile);
 });
 
@@ -84,6 +72,9 @@ closePopupImageButton.addEventListener("click", function () {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", function (evt) {
+    keyHandler(evt, popup);
+  });
 }
 
 cardAddButton.addEventListener("click", function () {
