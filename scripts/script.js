@@ -40,14 +40,18 @@ editButton.addEventListener("click", openProfilePopup);
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", function (evt) {
-    keyHandler(evt, popup);
-  });
+  document.removeEventListener("keydown", keyHandler);
 }
 
-function keyHandler(evt, popup) {
+function openPopup(popup) {
+  popup.classList.add("popup_opened");
+  document.addEventListener("keydown", keyHandler);
+}
+
+function keyHandler(evt) {
   if (evt.key === "Escape") {
-    closePopup(popup);
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
   }
 }
 
@@ -69,13 +73,6 @@ cardsCloseButton.addEventListener("click", function () {
 closePopupImageButton.addEventListener("click", function () {
   closePopup(popupImage);
 });
-
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", function (evt) {
-    keyHandler(evt, popup);
-  });
-}
 
 cardAddButton.addEventListener("click", function () {
   openPopup(popupCards);

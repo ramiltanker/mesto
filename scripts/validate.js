@@ -86,7 +86,7 @@ const enableValidation = (allClasses) => {
     );
 
     fieldsetList.forEach((fieldset) => {
-      setEventListeners(fieldset, allSelectors);
+      setEventListeners(fieldset, allClasses);
     });
   });
 };
