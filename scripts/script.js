@@ -140,8 +140,8 @@ function createCard(name, link) {
   });
 
   const deleteButton = cardElement.querySelector(".elements__delete-button");
-  deleteButton.addEventListener("click", function () {
-    const cardElement = document.querySelector(".elements__element");
+  deleteButton.addEventListener("click", function (evt) {
+    const cardElement = evt.target.closest('.elements__element');
     cardElement.remove();
   });
 
