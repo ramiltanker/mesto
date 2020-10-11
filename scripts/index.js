@@ -19,7 +19,6 @@ const cardListElement = popupCards.querySelector("#popup-form-card");
 
 const cardsContainer = document.querySelector(".elements");
 
-
 const popupImage = document.querySelector("#popup-image");
 const closePopupImageButton = popupImage.querySelector(
   ".popup__close-button-image"
@@ -35,17 +34,17 @@ const allPopups = Array.from(document.querySelectorAll(".popup"));
 function openProfilePopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileProfession.textContent;
-  openPopup(popupProfile);
+  handleOpenPopup(popupProfile);
 }
 
 editButton.addEventListener("click", openProfilePopup);
 
-function closePopup(popup) {
+function handleClosePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", keyHandler);
 }
 
-function openPopup(popup) {
+function handleOpenPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
 }
@@ -53,31 +52,31 @@ function openPopup(popup) {
 function keyHandler(evt) {
   if (evt.key === "Escape") {
     const openedPopup = document.querySelector(".popup_opened");
-    closePopup(openedPopup);
+    handleClosePopup(openedPopup);
   }
 }
 
 allPopups.forEach(function (popup) {
   popup.addEventListener("click", function (evt) {
     if (evt.target.classList.contains("popup_opened")) {
-      closePopup(popup);
+      handleClosePopup(popup);
     }
   });
 });
 
 closeButton.addEventListener("click", function (evt) {
-  closePopup(popupProfile);
+  handleClosePopup(popupProfile);
 });
 
 cardsCloseButton.addEventListener("click", function () {
-  closePopup(popupCards);
+  handleClosePopup(popupCards);
 });
 closePopupImageButton.addEventListener("click", function () {
-  closePopup(popupImage);
+  handleClosePopup(popupImage);
 });
 
 cardAddButton.addEventListener("click", function () {
-  openPopup(popupCards);
+  handleOpenPopup(popupCards);
 });
 
 function formSubmitHandler(evt) {
@@ -85,7 +84,7 @@ function formSubmitHandler(evt) {
 
   profileName.textContent = nameInput.value;
   profileProfession.textContent = jobInput.value;
-  closePopup(popupProfile);
+  handleClosePopup(popupProfile);
 }
 
 formElement.addEventListener("submit", formSubmitHandler);
@@ -123,40 +122,46 @@ const initialCards = [
   },
 ];
 
-import {Card} from './Card.js';
-
+import { Card } from "./Card.js";
 
 function renderCards() {
-  cardsContainer.innerHTML = '';
+  cardsContainer.innerHTML = "";
   initialCards.forEach((item) => {
-    const card = new Card(item, '#cards');
-    const cardElement = card.generateCard(popupImage, popupImageTitle, popupImageIllustration, keyHandler, closePopupImageButton);
+    const card = new Card(item, "#cards");
+    const cardElement = card.generateCard(
+      popupImage,
+      popupImageTitle,
+      popupImageIllustration,
+      keyHandler,
+      closePopupImageButton
+    );
     cardsContainer.append(cardElement);
   });
 }
 
 renderCards();
 
-
-
 function cardCreateSubmit(evt) {
   evt.preventDefault();
 
-  const cardItem = (
-    {
-      name: cardNameInput.value,
-      link: cardLinkInput.value,
-    });
+  const cardItem = {
+    name: cardNameInput.value,
+    link: cardLinkInput.value,
+  };
 
-  const card = new Card(cardItem, '#cards');
-  const cardElement = card.generateCard(popupImage, popupImageTitle, popupImageIllustration, keyHandler, closePopupImageButton);
+  const card = new Card(cardItem, "#cards");
+  const cardElement = card.generateCard(
+    popupImage,
+    popupImageTitle,
+    popupImageIllustration,
+    keyHandler,
+    closePopupImageButton
+  );
   cardsContainer.prepend(cardElement);
-  closePopup(popupCards);
+  handleClosePopup(popupCards);
 }
 
-
 cardListElement.addEventListener("submit", cardCreateSubmit);
-
 
 const allSelectors = {
   formSelector: ".popup__form",
@@ -168,12 +173,10 @@ const allSelectors = {
   fieldsetClass: ".popup__form-set",
 };
 
-const cardForm = document.querySelector('#popup-form-card');
-const profileForm = document.querySelector('#popup-profile-form');
+const cardForm = document.querySelector("#popup-form-card");
+const profileForm = document.querySelector("#popup-profile-form");
 
-
-import {FormValidator} from './FormValidaton.js';
-
+import { FormValidator } from "./FormValidaton.js";
 
 function formValidation(selectors, formElement) {
   const form = new FormValidator(selectors, formElement);
