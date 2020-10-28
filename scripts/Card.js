@@ -1,7 +1,8 @@
 export class Card {
-  constructor(data, cardSelector) {
-    this._title = data.name;
-    this._image = data.link;
+  constructor({items: {name, link}, handleCardClick}, cardSelector) {
+    this._title = name;
+    this._image = link;
+    this._handleCardClick = handleCardClick;
     this._cardSelector = cardSelector;
   }
 
@@ -18,14 +19,12 @@ export class Card {
     popupImage,
     popupImageTitle,
     popupImageIllustration,
-    keyHandler
   ) {
     this._element = this._getTemplate();
     this._setEventListeners(
       popupImage,
       popupImageTitle,
       popupImageIllustration,
-      keyHandler
     );
     this._element.querySelector(".elements__image").src = this._image;
     this._element.querySelector(".elements__image").alt = this._title;
@@ -42,46 +41,13 @@ export class Card {
     evt.target.closest(".elements__element").remove();
   }
 
-  _handleOpenPopup(
-    popupImageTitle,
-    popupImageIllustration,
-    popupImage,
-    keyHandler
-  ) {
-    popupImageTitle.textContent = this._title;
-    popupImageIllustration.src = this._image;
-    popupImage.classList.add("popup_opened");
-    document.addEventListener("keydown", keyHandler);
-  }
 
-  _handleClosePopup(popupImage, keyHandler) {
-    popupImage.classList.remove("popup_opened");
-    document.removeEventListener("keydown", keyHandler);
-  }
-
-  _setEventListeners(
-    popupImage,
-    popupImageTitle,
-    popupImageIllustration,
-    keyHandler
-  ) {
+  _setEventListeners() {
     this._element
       .querySelector(".elements__image")
       .addEventListener("click", () => {
-        this._handleOpenPopup(
-          popupImageTitle,
-          popupImageIllustration,
-          popupImage,
-          keyHandler
-        );
+        this._handleCardClick();
       });
-
-    const closePopupImageButton = popupImage.querySelector(
-      ".popup__close-button-image"
-    );
-    closePopupImageButton.addEventListener("click", () => {
-      this._handleClosePopup(popupImage, keyHandler);
-    });
 
     this._element
       .querySelector(".elements__like-button")
