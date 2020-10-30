@@ -1,11 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './scripts/index.js',
+  entry: './src/scripts/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
+    publicPath:'',
   },
 
   module: {
@@ -21,7 +23,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|svg|jpe?g|gif|woff|woff2)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -32,13 +34,30 @@ module.exports = {
         test: /\.html$/i,
         loader: 'html-loader',
       },
+      {
+        test: /\.css$/i,
+        use: ['css-loader'],
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          'postcss-loader', ],
+      },
     ]
   }, 
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
-    }) 
+      template: './src/index.html',
+    }),
+    new MiniCssExtractPlugin(),
   ],
   
   devtool: 'inline-source-map',
