@@ -1,0 +1,35 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "2020 Mesto Russia ===================== Описание ----------------------------------- Проект в котором присутсвует код на javascript, который позволяет редактировать и сохранять изменения в профиле. Сайт свёрстан с помощью технологий grid и flex-box. На кнопках присутствуют визуальные эффекты, такие как затемнение при наведении мыши(hover). Сайт адаптивен. --- Ссылка на GitHub Pages: ### [GitHub Pages](https://ramiltanker.github.io/mesto/)",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramiltanker/mesto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramiltanker/mesto/issues"
+  },
+  "homepage": "https://github.com/ramiltanker/mesto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^5.3.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5"
+  }
+}

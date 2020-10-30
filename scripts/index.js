@@ -209,11 +209,12 @@ function cardCreateSubmit(data) {
 
 const PopupCard = new PopupWithForm('#popup-cards', cardCreateSubmit);
 
+
 cardAddButton.addEventListener('click', () => {
   PopupCard.open();
-  PopupCard.setEventListeners();
 });
 
+PopupCard.setEventListeners();
 
 const allSelectors = {
   formSelector: ".popup__form",
