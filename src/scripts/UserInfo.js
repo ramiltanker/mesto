@@ -13,7 +13,7 @@ export class UserInfo {
     }
 
     setUserInfo(data) {
-        this._name.textContent = data.popup__name;
-        this._info.textContent = data.popup__job;
+        this._name.textContent = data.name;
+        this._info.textContent = data.job;
     }
 }

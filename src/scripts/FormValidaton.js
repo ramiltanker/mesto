@@ -1,10 +1,7 @@
 export class FormValidator {
   constructor(selectors, formElement) {
     this._selectors = selectors;
-    this._formElement = formElement;
-    this._inputElement = this._formElement.querySelector(
-      this._selectors.inputSelector
-    );
+    this._formElement = formElement;  
   }
 
   _showInputError(formElement, inputElement, errorMessage) {
@@ -67,16 +64,11 @@ export class FormValidator {
     });
   }
 
-  enableValidation(selector) {
-    const formList = Array.from(
-      document.querySelectorAll(selector.formSelector)
-    );
-
-    formList.forEach((formElement) => {
-      formElement.addEventListener("submit", function (evt) {
-        evt.preventDefault();
-      });
-      this._setEventListeners(formElement);
+  enableValidation() {
+    this._formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
     });
+    this._setEventListeners(this._formElement);
   }
-}
+  }
+

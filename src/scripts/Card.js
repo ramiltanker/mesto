@@ -16,18 +16,13 @@ export class Card {
   }
 
   generateCard(
-    popupImage,
-    popupImageTitle,
-    popupImageIllustration,
   ) {
     this._element = this._getTemplate();
+    this._cardImage = this._element.querySelector(".elements__image")
     this._setEventListeners(
-      popupImage,
-      popupImageTitle,
-      popupImageIllustration,
     );
-    this._element.querySelector(".elements__image").src = this._image;
-    this._element.querySelector(".elements__image").alt = this._title;
+    this._cardImage.src = this._image;
+    this._cardImage.alt = this._title;
     this._element.querySelector(".elements__title").textContent = this._title;
 
     return this._element;
@@ -43,8 +38,7 @@ export class Card {
 
 
   _setEventListeners() {
-    this._element
-      .querySelector(".elements__image")
+    this._cardImage
       .addEventListener("click", () => {
         this._handleCardClick();
       });
