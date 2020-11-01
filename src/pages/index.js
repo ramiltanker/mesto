@@ -1,14 +1,11 @@
 import '../pages/index.css';
-import {PopupWithForm} from './PopupWithForm.js';
-import {Section} from './Section.js';
-import { Card } from "./Card.js";
-import {Popup} from './Popup.js';
-import {PopupWithImage} from './PopupWithImage.js';
-import {UserInfo} from './UserInfo.js';
+import {PopupWithForm} from '../components/PopupWithForm.js';
+import {Section} from '../components/Section.js';
+import { Card } from "../components/Card.js";
+import {PopupWithImage} from '../components/PopupWithImage.js';
+import {UserInfo} from '../components/UserInfo.js';
 
-import {page, profile, profileInfo, editButton, profilePopup, closeButton, formElement, nameInput, jobInput, profileName, profileProfession,
-  popupCards, cardAddButton, cardNameInput, cardLinkInput, cardsCloseButton, cardListElement, cardsContainer, imagePopup, closePopupImageButton,
-  popupImageTitle, popupImageIllustration, allPopups} from './constans.js';
+import {editButton, nameInput, jobInput, cardAddButton} from '../scripts/constans.js';
 
 
 function formSubmitHandler(data) {
@@ -117,7 +114,7 @@ const allSelectors = {
 const cardForm = document.querySelector("#popup-form-card");
 const profileForm = document.querySelector("#popup-profile-form");
 
-import { FormValidator } from "./FormValidaton.js";
+import { FormValidator } from "../components/FormValidaton.js";
 
 function formValidation(selectors, formElement) {
   const form = new FormValidator(selectors, formElement);
