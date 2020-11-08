@@ -31,6 +31,14 @@ const popupImageIllustration = imagePopup.querySelector(
 
 const allPopups = Array.from(document.querySelectorAll(".popup"));
 
+const avatarContainer = profile.querySelector('.profile__avatar-container');
+const avatarRedactImage = avatarContainer.querySelector('.profile__avatar-redact-image');
+const avatarImage = avatarContainer.querySelector('.profile__image');
+const avatarInput = document.querySelector('#avatar-input');
+
+const likesContainer = document.querySelector('.elements__like-score');
+const likeButton = document.querySelector('.elements__like-button');
+
 export {page, profile, profileInfo, editButton, profilePopup, closeButton, formElement, nameInput, jobInput, profileName, profileProfession,
 popupCards, cardAddButton, cardNameInput, cardLinkInput, cardsCloseButton, cardListElement, cardsContainer, imagePopup, closePopupImageButton,
-popupImageTitle, popupImageIllustration, allPopups};
+popupImageTitle, popupImageIllustration, allPopups, avatarContainer, avatarRedactImage, avatarImage, avatarInput, likesContainer, likeButton};

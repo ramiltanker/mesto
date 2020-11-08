@@ -11,11 +11,20 @@
       </header>
 
       <section class="profile">
+        <div class="profile__avatar-container">
+        <img 
+        src="./images/avatar-redact.svg"
+        class="profile__avatar-redact-image"
+        alt="Редактировать">
+        <div class="profile__avatar-redaction">
         <img
           src="./images/жак_ив_кусто.png"
           class="profile__image"
           alt="Аватарка"
         />
+
+        </div>
+        </div>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit-button" type="button">
@@ -55,6 +64,36 @@
               minlength="2" maxlength="200"
             />
             <span class='popup__form-input-error ' id='job-input-error'></span>
+            </label>
+            <button class="popup__button-save popup__button-submit" type="submit">Сохранить</button>
+            </fieldset>
+          </form>
+          <button class="popup__close-button" type="reset">
+            <img
+              src="./images/Close_Icon.svg"
+              class="popup__close-image"
+              alt="Закрыть"
+            />
+          </button>
+        </div>
+      </div> 
+
+
+      <div class="popup" id="popup-avatar">
+        <div class="popup__container">
+          <h3 class="popup__title">Обновить аватар</h3>
+          <form method="post" name="popup" class="popup__form" id="popup-avatar-form">
+            <fieldset class="popup__form-set">
+            <label class="popup__form-field">
+            <input
+            id="avatar-input"
+              type="url"
+              class="popup__form-input popup__avatar"
+              name="link"
+              required
+              placeholder="Ссылка на аватар"
+            />
+            <span class='popup__form-input-error ' id='avatar-input-error'></span>
             </label>
             <button class="popup__button-save popup__button-submit" type="submit">Сохранить</button>
             </fieldset>
@@ -125,8 +164,10 @@
           <button class="elements__delete-button">
             <img src="./images/deleteButton.svg" alt="Удалить">
           </button>
-        <button class="elements__like-button" type="button">
-        </button>
+          <div class = "elements__like-group">
+        <button class="elements__like-button" type="button"></button>
+        <span class="elements__like-score"></span>
+          </div>
         </div>
       </template>
   </body>
