@@ -7,7 +7,8 @@ import {UserInfo} from '../components/UserInfo.js';
 import {Api} from '../components/Api.js';
 import {visibleAvatarRedactImage, hideAvatarRedactImage} from '../scripts/utils.js';
 import {PopupDelete} from '../components/PopupDelete.js';
-import {editButton, nameInput, jobInput, cardAddButton, avatarContainer, avatarRedactImage, avatarImage, profileName, profileProfession, avatarInput, likesContainer, likeButton} from '../scripts/constans.js';
+import {editButton, nameInput, jobInput, cardAddButton, avatarContainer, avatarRedactImage, avatarImage, profileName, 
+  profileProfession, avatarInput, likesContainer, likeButton, popupCards, avatarForm, profileForm, cardForm} from '../scripts/constans.js';
 
 
 avatarContainer.addEventListener('mouseover', visibleAvatarRedactImage);
@@ -27,6 +28,7 @@ function submitAvatarHandler(data) {
   .then( () => {
     avatarImage.src = data.link;
     popupAvatar.close();
+    popupAvatar.isSaving();
   }) 
 }
 
@@ -34,6 +36,7 @@ popupAvatar.setEventListeners();
 
 avatarContainer.addEventListener('click', () => {
   popupAvatar.open();
+  popupAvatar.isSavingReset();
 })
 
 function formSubmitHandler(data) {
@@ -41,6 +44,7 @@ function formSubmitHandler(data) {
   .then(() => {
       userInfo.setUserInfo(data);
       popupProfile.close();
+      popupProfile.isSaving();
   })
 }
 
@@ -65,7 +69,7 @@ const userInfo = new UserInfo({nameSelector:'.profile__name' , infoSelector:'.pr
 
 editButton.addEventListener("click", () => {
   popupProfile.open();
-
+  popupProfile.isSavingReset();
   const userData = userInfo.getUserInfo();
   nameInput.value = userData.name;
   jobInput.value = userData.info;
@@ -142,16 +146,12 @@ cardsSection.renderItems();
 })
 // Отрисовка карточек
 
-// Like
-
-
-
-// Like
 
 
 // Добавление новых карточек
 
 const popupCard = new PopupWithForm('#popup-cards', (data) => {
+  popupCard.isSaving();
  api.addNewCards(data)
  .then(data => {
   const card = new Card({ 
@@ -205,12 +205,10 @@ popupCard.setEventListeners();
 
 cardAddButton.addEventListener('click', () => {
   popupCard.open();
+  popupCard.isSavingReset();
 });
 
-
 // Добавление новых карточек
-
-
 
 
 const allSelectors = {
@@ -223,8 +221,7 @@ const allSelectors = {
   fieldsetClass: ".popup__form-set",
 };
 
-const cardForm = document.querySelector("#popup-form-card");
-const profileForm = document.querySelector("#popup-profile-form");
+
 
 import { FormValidator } from "../components/FormValidaton.js";
 
@@ -236,4 +233,6 @@ function formValidation(selectors, formElement) {
 formValidation(allSelectors, cardForm);
 
 formValidation(allSelectors, profileForm);
+
+formValidation(allSelectors, avatarForm);
 
