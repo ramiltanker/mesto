@@ -17,3 +17,4 @@ export class UserInfo {
         this._info.textContent = data.job;
     }
 }
+

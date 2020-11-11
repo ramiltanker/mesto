@@ -131,5 +131,21 @@ export class Api {
           return Promise.reject(`Ошибка: ${res.status}`);
       })
       }
+
+      deleteCard(cardId) {
+        return fetch(`${this._address}/${this._cohort}/cards/${cardId}`, {
+          method: 'DELETE',
+          headers: {
+            authorization: this._token,
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(res => {
+          if(res.ok) {
+              return res.json();
+          }
+          return Promise.reject(`Ошибка: ${res.status}`);
+      })
+      }
       // другие методы работы с API
 }
