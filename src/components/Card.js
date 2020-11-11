@@ -61,7 +61,7 @@ export class Card {
 
   renderLikes() {
     this._element.querySelector('.elements__like-score').textContent = this._likes.length;
-    if(this.isLiked()) {
+    if(this.isLiked(this._userId)) {
       this._element.querySelector(".elements__like-button").classList.add('elements__like-button_active');
     }
     else {
@@ -85,7 +85,7 @@ export class Card {
       .addEventListener("click", () => {
         this._likeCard();
         this._element
-        .querySelector(".elements__like-button").classList.add('elements__like-button_active');
+        .querySelector(".elements__like-button").classList.toggle('elements__like-button_active');
       });
       
     this._element
