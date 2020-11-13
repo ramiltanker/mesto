@@ -2,11 +2,11 @@ const page = document.querySelector(".page");
 const profile = page.querySelector(".profile");
 const profileInfo = profile.querySelector(".profile__info");
 const editButton = profileInfo.querySelector(".profile__edit-button");
-const profilePopup = page.querySelector(".popup");
+const profilePopup = page.querySelector("#popup-profile");
 const closeButton = profilePopup.querySelector(".popup__close-button");
-const formElement = document.querySelector(".popup__form");
-const nameInput = formElement.querySelector(".popup__form-name");
-const jobInput = formElement.querySelector(".popup__form-job");
+const formProfileElement = profilePopup.querySelector(".popup__form");
+const nameInput = formProfileElement.querySelector(".popup__form-name");
+const jobInput = formProfileElement.querySelector(".popup__form-job");
 const profileName = profileInfo.querySelector(".profile__name");
 const profileProfession = profileInfo.querySelector(".profile__profession");
 
@@ -45,7 +45,7 @@ const profileForm = document.querySelector("#popup-profile-form");
 const avatarForm = document.querySelector('#popup-avatar-form');
 
 
-export {page, profile, profileInfo, editButton, profilePopup, closeButton, formElement, nameInput, jobInput, profileName, profileProfession,
+export {page, profile, profileInfo, editButton, profilePopup, closeButton, formProfileElement, nameInput, jobInput, profileName, profileProfession,
 popupCards, cardAddButton, cardNameInput, cardLinkInput, cardsCloseButton, cardListElement, cardsContainer, imagePopup, closePopupImageButton,
 popupImageTitle, popupImageIllustration, allPopups, avatarContainer, avatarRedactImage, avatarImage, avatarInput, likesContainer, likeButton, cardForm,
 profileForm, avatarForm};

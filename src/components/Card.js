@@ -43,7 +43,7 @@ export class Card {
   }
 
   deleteCard() {
-   this._element.querySelector('.elements__delete-button').closest('.elements__element').remove();
+   this._element.remove();
   }
 
   renderDeleteIcons() {
@@ -94,9 +94,5 @@ export class Card {
         this._handleCardDelete();
       });
   }
-
-  addItem(element) {
-    this._container.append(element);
-}
 
 }

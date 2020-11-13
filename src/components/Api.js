@@ -5,18 +5,25 @@ export class Api {
     this._address = address;
   }
     
+
+  _getResponseData(res) {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+} 
+
+
+
       getInitialCards() {
           return fetch(`${this._address}/${this._cohort}/cards`, {
             headers: {
               authorization: this._token
             }
           })
-        .then(res => {
-            if(res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        })
+        .then(res => 
+            this._getResponseData(res)
+        )
       }
     
     
@@ -32,12 +39,9 @@ export class Api {
                 link: data.link
               }),
           })
-          .then(res => {
-            if(res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`);
-        })
+          .then(res => 
+            this._getResponseData(res)
+        )
       }
 
 
@@ -50,12 +54,9 @@ export class Api {
             'Content-Type': 'application/json'
           },
         })
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
 
       setProfileInfo(name, about) {
@@ -71,12 +72,9 @@ export class Api {
           })
         })
 
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
 
 
@@ -91,12 +89,9 @@ export class Api {
             avatar: avatar
           })  
         })
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
 
       
@@ -108,12 +103,9 @@ export class Api {
             'Content-Type': 'application/json'
           }
         })
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
 
       deleteCardLike(cardId) {
@@ -124,12 +116,9 @@ export class Api {
             'Content-Type': 'application/json'
           }
         })
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
 
       deleteCard(cardId) {
@@ -140,12 +129,9 @@ export class Api {
             'Content-Type': 'application/json'
           }
         })
-        .then(res => {
-          if(res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка: ${res.status}`);
-      })
+        .then(res => 
+          this._getResponseData(res)
+      )
       }
       // другие методы работы с API
 }

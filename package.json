@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack --mode production",
-    "dev": "webpack-dev-server"
+    "dev": "start http://localhost:8000/ & webpack-dev-server"
   },
   "repository": {
     "type": "git",
