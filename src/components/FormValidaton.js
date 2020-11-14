@@ -2,6 +2,7 @@ export class FormValidator {
   constructor(selectors, formElement) {
     this._selectors = selectors;
     this._formElement = formElement;  
+    this._button = formElement.querySelector('.popup__button-submit');
   }
 
   _showInputError(formElement, inputElement, errorMessage) {
@@ -69,6 +70,11 @@ export class FormValidator {
       evt.preventDefault();
     });
     this._setEventListeners(this._formElement);
+  }
+
+  disableButton() {
+    this._button.classList.add(this._selectors.inactiveButtonClass);
+    this._button.disabled = 'true';
   }
   }
 

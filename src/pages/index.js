@@ -28,6 +28,7 @@ const api = new Api({
     avatarContainer.addEventListener('click', () => {
     popupAvatar.open();
     popupAvatar.isSavingReset();
+    formAvatar.disableButton();
   })
 
   function submitAvatarHandler(data) {
@@ -37,6 +38,9 @@ const api = new Api({
       popupAvatar.close();
       popupAvatar.isSaving();
     }) 
+    .catch((error) => {
+      console.log(error);
+    })
   }
 
   const popupAvatar = new PopupWithForm('#popup-avatar', submitAvatarHandler);
@@ -51,6 +55,9 @@ const api = new Api({
         popupProfile.close();
         popupProfile.isSaving();
     })
+    .catch((error) => {
+      console.log(error);
+    })
   }
   
   const popupProfile = new PopupWithForm('#popup-profile', formSubmitHandler);
@@ -62,7 +69,10 @@ const api = new Api({
     userInfo.setUserInfo(data);
   avatarImage.src = data.avatar;
   console.log(data);
-  return userId = data._id;
+  userId = data._id;
+  })
+  .catch((error) => {
+    console.log(error);
   })
   
   
@@ -73,6 +83,7 @@ const api = new Api({
     const userData = userInfo.getUserInfo();
     nameInput.value = userData.name;
     jobInput.value = userData.info;
+    formProfile.disableButton();
   });
 
 
@@ -130,8 +141,6 @@ handleCardDelete: () => {
    api.deleteCard(data._id)
    .then(() => {
      card.deleteCard();
-   })
-   .finally(() => {
      popupDelete.close();
    })
  })
@@ -144,7 +153,8 @@ handleCardDelete: () => {
 api.getInitialCards()
   .then((data) => {
   console.log(data);
-  cardsSection.renderItems(data);
+  const dataReverse = data.reverse();
+  cardsSection.renderItems(dataReverse);
 })
 .catch((error) => {
   console.log(error);
@@ -173,6 +183,7 @@ popupCard.setEventListeners();
 cardAddButton.addEventListener('click', () => {
   popupCard.open();
   popupCard.isSavingReset();
+  formCard.disableButton();
 });
 
 // Добавление новых карточек
